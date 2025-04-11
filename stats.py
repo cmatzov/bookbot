@@ -20,12 +20,9 @@ def characters_count(char_list: str) -> dict[str, int]:
             recurrencies[char] = 1
     return recurrencies
 
-def sort_list(recurrency: dict):
-    return recurrency["count"]
-
 def report(recurrencies: dict[str, int]) -> list[dict]:
     unsorted_list = [{"char": char, "count": count} for char, count in recurrencies.items()]
-    unsorted_list.sort(reverse=True, key=sort_list)
+    unsorted_list.sort(reverse=True, key=lambda recurrency: recurrency["count"])
     return unsorted_list
 
 def print_report(unsorted_list: list[dict]):
