@@ -22,6 +22,8 @@ def main():
 
         print("============= END ===============")
 
+    except FileNotFoundError:
+        print(f"File {file} is not in the books/directory\nUsage python main.py books/<path_to_file>")
     except Exception:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
